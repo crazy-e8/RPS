@@ -11,14 +11,12 @@ function numberToString(num) {
 
     return choice;
 }
-
 function getComputerChoice() {        
     let randomNumber = Math.floor(Math.random() * 3);
     let computerChoice = numberToString(randomNumber)
 
     return computerChoice;
 }
-
 function getUserChoice() {
     console.log("Choose your option:");
     console.log("1 - Rock");
@@ -35,22 +33,37 @@ function getUserChoice() {
     
     return choice;
 }
-
 function checkWinner(user, computer) {
     if (user === computer) {
-        console.log('DRAW')
+        console.log('DRAW');
+        return 0;
     }
     else if ((user === 'Rock' && computer === 'Paper') || (user === 'Paper' && computer === 'Scissors') || (user === 'Scissors' && computer === 'Rock')) {
         console.log("Computer Wins!");
+        return 1;
     }
     else {
         console.log('You Win!')
+        return 2;
     }
 }
 
-let userChoice = getUserChoice();
-let computerChoice = getComputerChoice();
+let humanScore = 0;
+let computerScore = 0;
 
-console.log('You chose: ' + userChoice);
-console.log('Computer chose: ' + computerChoice);
-checkWinner(userChoice, computerChoice);
+while (true) {
+    let userChoice = getUserChoice();
+    let computerChoice = getComputerChoice();
+
+    console.log('You chose: ' + userChoice);
+    console.log('Computer chose: ' + computerChoice);
+    winner = checkWinner(userChoice, computerChoice);
+
+    if (winner === 1) computerScore++;
+    if (winner === 2) humanScore++;
+    console.clear();
+    console.log('----------------------------------');
+    console.log('Your Score: ' + humanScore);
+    console.log('Computer Score: ' + computerScore);
+    console.log('----------------------------------');
+}
