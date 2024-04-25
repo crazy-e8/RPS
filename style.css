@@ -88,6 +88,18 @@ h1 {
   font-weight: 800;
 }
 
+#rock:active {
+  box-shadow: #ef547f 0 5px;
+}
+
+#paper:active {
+  box-shadow: #ffdd54 0 5px;
+}
+
+#scissors:active {
+  box-shadow: #73dbe1 0 5px;
+}
+
 .input-button-wrapper p {
   color: black;
 }
