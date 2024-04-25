@@ -86,17 +86,17 @@ h1 {
   color: black;
 }
 
-.rock p {
+#rock p {
   text-shadow: -1px -1px 0 #ef547f, 1px -1px 0 #ef547f, -1px 1px 0 #ef547f,
     1px 1px 0 #ef547f;
 }
 
-.paper p {
+#paper p {
   text-shadow: -1px -1px 0 #ffdd54, 1px -1px 0 #ffdd54, -1px 1px 0 #ffdd54,
     1px 1px 0 #ffdd54;
 }
 
-.scissors p {
+#scissors p {
   text-shadow: -1px -1px 0 #73dbe1, 1px -1px 0 #73dbe1, -1px 1px 0 #73dbe1,
     1px 1px 0 #73dbe1;
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="javascript.js"></script>
+    <script src="javascript.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <title>Rock Paper Scissors</title>
   </head>
@@ -18,12 +18,20 @@
         </div>
 
         <!-- Human Choice -->
-        <img class="choice-img" src="icons/qm.png" alt="" />
+        <img
+          id="player_choice_img"
+          class="choice-img"
+          src="icons/qm.png"
+          alt="" />
 
         <h2>DRAW</h2>
 
         <!-- Human Choice -->
-        <img class="choice-img" src="icons/qm.png" alt="" />
+        <img
+          id="computer_choice_img"
+          class="choice-img"
+          src="icons/qm.png"
+          alt="" />
 
         <div class="player-wrapper">
           <img class="player-img" src="/icons/karen.webp" alt="" />
@@ -32,15 +40,15 @@
       </div>
 
       <div class="user-input">
-        <div class="input-button-wrapper rock">
+        <div id="rock" class="input-button-wrapper">
           <img src="icons/Rock.png" alt="" />
           <p>Rock</p>
         </div>
-        <div class="input-button-wrapper paper">
+        <div id="paper" class="input-button-wrapper">
           <img src="icons/Paper.png" alt="" />
           <p>Paper</p>
         </div>
-        <div class="input-button-wrapper scissors">
+        <div id="scissors" class="input-button-wrapper">
           <img src="icons/Scissors.png" alt="" />
           <p>Scissors</p>
         </div>
