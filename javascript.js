@@ -24,8 +24,15 @@ function setComputerChoice() {
 function playRound() {
   setComputerChoice();
   humanChoice = this.getAttribute("id");
-  uiPlayerChoice.src = "icons/" + humanChoice + ".png";
-  uiComputerChoice.src = "icons/" + computerChoice + ".png";
+
+  uiPlayerChoice.src =
+    "icons/" +
+    (humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)) +
+    ".png";
+  uiComputerChoice.src =
+    "icons/" +
+    (computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)) +
+    ".png";
   win = checkWinnerRound();
 
   switch (win) {
