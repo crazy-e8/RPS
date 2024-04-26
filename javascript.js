@@ -6,6 +6,8 @@ const uiComputerChoice = document.getElementById("computer_choice_img");
 const uiRoundResult = document.getElementById("round-result");
 const uiHumanScore = document.getElementById("human-score");
 const uiComputerScore = document.getElementById("computer-score");
+const popupWindow = document.getElementById("popup-window");
+const popupButton = popupWindow.children[1];
 
 let humanChoice = "";
 let computerChoice = "";
@@ -42,7 +44,13 @@ function playRound() {
   uiHumanScore.textContent = humanScore;
   uiComputerScore.textContent = computerScore;
 
-  if (computerScore == 5) {
+  console.log(computerScore);
+  if (computerScore === 5) {
+    popupWindow.style.visibility = "visible";
+    popupWindow.children[0].textContent = "KEREN WINS!";
+  } else if (humanScore === 5) {
+    popupWindow.style.visibility = "visible";
+    popupWindow.children[0].textContent = "YOU WIN!";
   }
 }
 
@@ -76,6 +84,16 @@ function checkWinnerRound() {
       return "draw";
   }
 }
+
+popupButton.addEventListener("click", function (e) {
+  humanScore = 0;
+  uiHumanScore.textContent = humanScore;
+  computerScore = 0;
+  uiComputerScore.textContent = computerScore;
+  roundResult = "PLAY";
+  uiRoundResult.textContent = roundResult;
+  popupWindow.style.visibility = "hidden";
+});
 
 for (const button of buttons) {
   button.addEventListener("click", playRound, false);
