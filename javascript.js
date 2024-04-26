@@ -2,10 +2,15 @@ const buttons = document.querySelectorAll(".input-button-wrapper");
 const uiPlayerChoice = document.getElementById("player_choice_img");
 const uiComputerChoice = document.getElementById("computer_choice_img");
 const uiRoundResult = document.getElementById("round-result");
+const uiHumanScore = document.getElementById("human-score");
+const uiComputerScore = document.getElementById("computer-score");
 
 let humanChoice = "";
 let computerChoice = "";
 let roundResult = "";
+
+let humanScore = 0;
+let computerScore = 0;
 
 function setComputerChoice() {
   var randomNumber = Math.floor(Math.random() * buttons.length);
@@ -17,7 +22,25 @@ function playRound() {
   humanChoice = this.getAttribute("id");
   uiPlayerChoice.src = "icons/" + humanChoice + ".png";
   uiComputerChoice.src = "icons/" + computerChoice + ".png";
-  checkWinnerRound();
+  win = checkWinnerRound();
+
+  switch (win) {
+    case "human":
+      humanScore++;
+      break;
+
+    case "computer":
+      computerScore++;
+      break;
+
+    default:
+      break;
+  }
+
+  uiHumanScore.textContent = humanScore;
+  uiComputerScore.textContent = computerScore;
+  console.log(humanScore);
+  console.log(computerScore);
 }
 
 function checkWinnerRound() {
@@ -38,6 +61,17 @@ function checkWinnerRound() {
   }
 
   uiRoundResult.textContent = roundResult;
+
+  switch (roundResult) {
+    case "Computer Wins!":
+      return "computer";
+    case "You Win!":
+      return "human";
+    case "DRAW":
+      return "draw";
+    default:
+      return "draw";
+  }
 }
 
 for (const button of buttons) {
