@@ -1,3 +1,5 @@
+const MAXROUNDS = 5;
+
 const buttons = document.querySelectorAll(".input-button-wrapper");
 const uiPlayerChoice = document.getElementById("player_choice_img");
 const uiComputerChoice = document.getElementById("computer_choice_img");
@@ -39,8 +41,9 @@ function playRound() {
 
   uiHumanScore.textContent = humanScore;
   uiComputerScore.textContent = computerScore;
-  console.log(humanScore);
-  console.log(computerScore);
+
+  if (computerScore == 5) {
+  }
 }
 
 function checkWinnerRound() {
